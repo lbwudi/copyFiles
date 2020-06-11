@@ -46,9 +46,10 @@ public class CopyCode {
                 cc.writeFile("\r\n", fileWriter);
                 cc.writeFile(readFile, fileWriter);
                 cc.writeFile("\r\n", fileWriter);
+                cc = null;
                 fileReader.close();
                 fileWriter.close();
-
+                
 //            }
 
 
