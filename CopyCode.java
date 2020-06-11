@@ -30,14 +30,12 @@ public class CopyCode {
                         files[i].getName()), writeTo);
             }
         } else{
-//            File[] files = readFrom.getParentFile().listFiles();
-//            for(int i=0;i<files.length;i++) {
-//                System.out.println(files[i].getName());
+            //取消复制单独的图片或视频文件夹
+            String name = readFrom.getParentFile().getName();
+            if(!name.equals('images') || !name.equals('audios')){
                 CC cc = new CC(readFrom, writeTo);
                 FileReader fileReader = cc.loadReader();
-//                char[] chars = new char[10];
-//                fileReader.read(chars);
-//                System.out.println(chars[3]);
+                
                 String readFile = cc.readFile(fileReader);
 
                 FileWriter fileWriter = cc.loadWriter(writeTo);
@@ -46,11 +44,13 @@ public class CopyCode {
                 cc.writeFile("\r\n", fileWriter);
                 cc.writeFile(readFile, fileWriter);
                 cc.writeFile("\r\n", fileWriter);
+                cc.writeFile("\r\n", fileWriter);
+                cc.writeFile("\r\n", fileWriter);
                 cc = null;
                 fileReader.close();
                 fileWriter.close();
                 
-//            }
+           }
 
 
         }
