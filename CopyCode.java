@@ -32,7 +32,7 @@ public class CopyCode {
         } else{
             //取消复制单独的图片或视频文件夹
             String name = readFrom.getParentFile().getName();
-            if(!name.equals('images') || !name.equals('audios')){
+            if(!name.equals("images") || !name.equals("audios")){
                 CC cc = new CC(readFrom, writeTo);
                 FileReader fileReader = cc.loadReader();
                 
