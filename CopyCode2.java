@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class CopyCode {
+public class CopyCode2 {
     public static void main(String[] args){
         File readFrom = new File(
                 "C:\\Users\\Administrator\\Desktop\\.net\\abc");
